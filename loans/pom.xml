@@ -11,6 +11,7 @@
 	<groupId>com.easybytes</groupId>
 	<artifactId>loans</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>loans</name>
 	<description>Loans microservice</description>
 	<properties>
@@ -69,6 +70,14 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
+					<image>
+						<name>
+							priya511/loans:s4
+						</name>
+						<env>
+							<BP_JVM_VERSION>${java.version}</BP_JVM_VERSION>
+						</env>
+					</image>
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
