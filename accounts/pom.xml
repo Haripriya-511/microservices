@@ -86,6 +86,7 @@
 	</dependencyManagement>
 	<build>
 		<plugins>
+
 			<plugin>
 				<groupId>com.google.cloud.tools</groupId>
 				<artifactId>jib-maven-plugin</artifactId>
@@ -94,7 +95,7 @@
 				<configuration>
 
 					<to>
-						<image>priya511/${project.artifactId}:s4</image>
+						<image>priya511/${project.artifactId}:s6</image>
 						<auth>
 							<username>priya511</username>
 							<password>123456789</password>

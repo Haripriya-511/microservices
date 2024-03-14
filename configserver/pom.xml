@@ -11,10 +11,12 @@
 	<groupId>com.easybytes</groupId>
 	<artifactId>configserver</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
 	<name>configserver</name>
 	<description>Config Server for easybanks microservices</description>
 	<properties>
 		<java.version>17</java.version>
+
 		<spring-cloud.version>2023.0.0</spring-cloud.version>
 	</properties>
 	<dependencies>
@@ -28,6 +30,12 @@
 			<artifactId>spring-cloud-config-server</artifactId>
 		</dependency>
 
+		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-config-monitor -->
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-config-monitor</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
@@ -55,6 +63,23 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.1</version>
+
+				<configuration>
+
+					<to>
+						<image>priya511/${project.artifactId}:s6</image>
+						<auth>
+							<username>priya511</username>
+							<password>123456789</password>
+						</auth>
+					</to>
+
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
